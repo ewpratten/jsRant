@@ -28,7 +28,8 @@
           </div>
           <div class="simple-field">
             <span class="field">rant</span>:
-            <div *ngFor="let line of getLines(rant); let i = index" class="string-line" [class.first]="i == 0" [class.empty]="line == ''">
+            <div *ngFor="let line of getLines(rant); let i = index" class="string-line" [class.first]="i == 0"
+                 [class.empty]="line == ''">
               <span class="string">{{escape(line)}}</span><span *ngIf="i < rant.lines.length - 1"> +</span><span
               *ngIf="i == rant.lines.length - 1">,</span>
             </div>
@@ -45,6 +46,9 @@
             <span class="comment">// Click here to open the rant on devRant.io</span>
             <span class="field">openOnDevRant</span>: <a href="https://www.devrant.io/rants/{{rant.id}}" target="_blank"
                                                          class="string">"https://www.devrant.io/rants/{{rant.id}}"</a>,
+          </div>
+          <div class="simple-field">
+            <span class="field">commentCount</span>: <span class="number">{{rant.num_comments}}</span>,
           </div>
           <div *ngIf="rant.num_comments > 0">
             <span class="field">comments</span>: <span class="array-start">[</span>
