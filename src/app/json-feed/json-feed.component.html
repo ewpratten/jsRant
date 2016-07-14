@@ -28,8 +28,8 @@
           </div>
           <div class="simple-field">
             <span class="field">rant</span>:
-            <div *ngFor="let line of getLines(rant); let i = index" class="string-line" [class.first]="i == 0">
-              <span class="string">{{line}}</span><span *ngIf="i < rant.lines.length - 1"> +</span><span
+            <div *ngFor="let line of getLines(rant); let i = index" class="string-line" [class.first]="i == 0" [class.empty]="line == ''">
+              <span class="string">{{escape(line)}}</span><span *ngIf="i < rant.lines.length - 1"> +</span><span
               *ngIf="i == rant.lines.length - 1">,</span>
             </div>
           </div>

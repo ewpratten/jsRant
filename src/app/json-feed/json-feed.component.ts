@@ -20,7 +20,7 @@ export class JsonFeedComponent implements OnInit {
   }
 
   getLines(rant) {
-    let result = rant.text.split('\n').map(line => JSON.stringify(line));
+    let result = rant.text.split('\n');
     rant.lines = result;
     return result;
   }

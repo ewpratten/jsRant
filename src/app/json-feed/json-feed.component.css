@@ -1,6 +1,6 @@
 
 .object-contents, .array-contents {
-  padding-left: 20px;
+  padding-left: 16px;
 }
 
 .object-end, .array-end {
@@ -11,8 +11,21 @@
   display: inline;
 }
 
+.string-line:not(.first) {
+  padding-left: 44px;
+}
+
+.string-line.empty {
+  visibility: hidden;
+}
+
 .string {
-  color: green;
+  color: forestgreen;
+}
+
+.string-line .string {
+  color: darkgreen;
+  font-weight: bold;
 }
 
 .number {
@@ -28,10 +41,6 @@
 }
 
 .comment {
-  display: none;
-}
-
-.first .comment {
   display: block;
   color: grey;
   margin-top: 16px;
