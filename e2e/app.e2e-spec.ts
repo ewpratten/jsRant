@@ -1,10 +1,10 @@
-import { CodeRantPage } from './app.po';
+import { JsRantPage } from './app.po';
 
-describe('code-rant App', function() {
-  let page: CodeRantPage;
+describe('js-rant App', function() {
+  let page: JsRantPage;
 
   beforeEach(() => {
-    page = new CodeRantPage();
+    page = new JsRantPage();
   });
 
   it('should display message saying app works', () => {

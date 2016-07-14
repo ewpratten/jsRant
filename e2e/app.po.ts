@@ -1,4 +1,4 @@
-export class CodeRantPage {
+export class JsRantPage {
   navigateTo() {
     return browser.get('/');
   }
