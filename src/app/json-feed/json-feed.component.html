@@ -1,24 +1,17 @@
 <div class="js">
   <span class="keyword">var</span> <span>results</span> = <span class="object-start">{</span>
-  <div class="object-contents">
+  <div class="object-contents first">
     <span class="field">nav</span>: <span class="object-start">{</span>
     <div class="object-contents">
       <div class="simple-field">
-        <span class="field">devRant</span>: <a href="https://devRant.io/feed"
+        <span class="comment">// Hexical Labs is the original creator of devRant</span>
+        <span class="field">devRant</span>: <a href="https://devRant.io/feed" target="_blank"
                                                class="string">"https://devRant.io/feed",</a>
       </div>
-    </div>
-    <span class="object-end">},</span>
-    <span class="field">sort</span>: <span class="object-start">{</span>
-    <div class="object-contents">
       <div class="simple-field">
-        <span class="field">algo</span>: <a href="https://devRant.io/feed/algo" class="string">"https://devRant.io/feed/algo",</a>
-      </div>
-      <div class="simple-field">
-        <span class="field">recent</span>: <a href="https://devRant.io/feed/recent" class="string">"https://devRant.io/feed/recent",</a>
-      </div>
-      <div class="simple-field">
-        <span class="field">top</span>: <a href="https://devRant.io/feed/top" class="string">"https://devRant.io/feed/top"</a>
+        <span class="comment">// ChappIO (me 😀) is the creator of this (unofficial) code version of devRant</span>
+        <span class="field">creator</span>: <a href="https://github.com/ChappIO/" target="_blank"
+                                               class="string">"https://github.com/ChappIO/"</a>
       </div>
     </div>
     <span class="object-end">},</span>
@@ -31,7 +24,7 @@
           <div class="simple-field">
             <span class="comment">// Click the username to view more information</span>
             <span class="field">user</span>:
-            <a href="https://www.devrant.io/users/{{rant.user_username}}" class="string">"https://www.devrant.io/users/{{rant.user_username}}"</a>,
+            <a href="https://www.devrant.io/users/{{rant.user_username}}" class="string" target="_blank">"{{rant.user_username}}"</a>,
           </div>
           <div class="simple-field">
             <span class="field">rant</span>:
@@ -45,21 +38,9 @@
             <span class="field">image</span>: <a class="string tooltip-wrapper"><img
             src="{{rant.attached_image.url}}" class="tooltip"/>{{escape(rant.attached_image.url)}}</a>,
           </div>
-          <span class="field">vote</span>: <span class="object-start">{</span>
-          <div class="object-contents">
-            <div class="simple-field">
-              <span class="field">score</span>: <a class="number">{{rant.score}}</a>,
-            </div>
-            <div class="simple-field">
-              <span class="comment">// Click the boolean to ++ this rant</span>
-              <span class="field">"++"</span>: <a class="boolean">{{rant.vote_status == 1}}</a>,
-            </div>
-            <div class="simple-field">
-              <span class="comment">// Click the boolean to -- this rant</span>
-              <span class="field">"--"</span>: <a class="boolean">{{rant.vote_status == -1}}</a>
-            </div>
+          <div class="simple-field">
+            <span class="field">score</span>: <span class="number">{{rant.score}}</span>,
           </div>
-          <span class="object-end">},</span>
           <div class="simple-field">
             <span class="comment">// Click here to open the rant on devRant.io</span>
             <span class="field">openOnDevRant</span>: <a href="https://www.devrant.io/rants/{{rant.id}}" target="_blank"
@@ -81,21 +62,9 @@
                   <div class="simple-field">
                     <span class="field">comment</span>: <span class="string">{{escape(comment.body)}}</span>,
                   </div>
-                  <span class="field">vote</span>: <span class="object-start">{</span>
-                  <div class="object-contents">
-                    <div class="simple-field">
-                      <span class="field">score</span>: <a class="number">{{comment.score}}</a>,
-                    </div>
-                    <div class="simple-field">
-                      <span class="comment">// Click the boolean to ++ this rant</span>
-                      <span class="field">"++"</span>: <a class="boolean">{{comment.vote_status == 1}}</a>,
-                    </div>
-                    <div class="simple-field">
-                      <span class="comment">// Click the boolean to -- this rant</span>
-                      <span class="field">"--"</span>: <a class="boolean">{{comment.vote_status == -1}}</a>
-                    </div>
+                  <div class="simple-field">
+                    <span class="field">score</span>: <span class="number">{{comment.score}}</span>,
                   </div>
-                  <span class="object-end">},</span>
                 </div>
                 <span class="object-end">}</span><span *ngIf="i < rant.comments.length - 1">,</span>
               </div>

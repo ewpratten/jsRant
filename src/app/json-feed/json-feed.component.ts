@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DevRantService} from "../dev-rant.service";
+import {DevRantService} from '../dev-rant.service';
 
 @Component({
   moduleId: module.id,
@@ -20,7 +20,7 @@ export class JsonFeedComponent implements OnInit {
   }
 
   getLines(rant) {
-    let result = rant.text.split("\n").map(line => JSON.stringify(line));
+    let result = rant.text.split('\n').map(line => JSON.stringify(line));
     rant.lines = result;
     return result;
   }
@@ -36,6 +36,6 @@ export class JsonFeedComponent implements OnInit {
   }
 
   escape(text:String):String {
-    return JSON.stringify(text).split("\\n").join('" + \n "');
+    return JSON.stringify(text).split('\\n').join('" + \n "');
   }
 }

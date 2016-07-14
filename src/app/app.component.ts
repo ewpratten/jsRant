@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {ROUTER_DIRECTIVES} from "@angular/router";
-import {DevRantService} from "./dev-rant.service";
-import {HTTP_PROVIDERS} from "@angular/http";
+import {ROUTER_DIRECTIVES} from '@angular/router';
+import {DevRantService} from './dev-rant.service';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 @Component({
   moduleId: module.id,
