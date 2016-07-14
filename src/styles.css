@@ -1,0 +1,20 @@
+#code-area {
+  max-width: 800px;
+}
+
+#code-area a {
+  text-decoration: none;
+}
+
+#code-area a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#code-area, #code-area pre {
+  font-family: monospace;
+}
+
+pre {
+  display: inline;
+}

@@ -1,0 +1,52 @@
+
+.object-contents, .array-contents {
+  padding-left: 20px;
+}
+
+.object-end, .array-end {
+  display: block;
+}
+
+.string-line.first {
+  display: inline;
+}
+
+.string {
+  color: green;
+}
+
+.number {
+  color: blue;
+}
+
+.boolean {
+  color: firebrick;
+}
+
+.field, .keyword {
+  font-weight: bold;
+}
+
+.comment {
+  display: none;
+}
+
+.first .comment {
+  display: block;
+  color: grey;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.keyword {
+  color: rgb(147, 15, 128);
+}
+
+.tooltip-wrapper .tooltip {
+  visibility: hidden;
+  position: absolute;
+}
+
+.tooltip-wrapper:hover .tooltip {
+  visibility: visible;
+}
