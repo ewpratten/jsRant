@@ -6,8 +6,8 @@ export class DevRantService {
   constructor(private http:Http) {
   }
 
-  getRants() {
-    return this.http.get('https://www.devrant.io/api/devrant/rants?app=3')
+  getRants(sort:String, skip:number) {
+    return this.http.get('https://www.devrant.io/api/devrant/rants?app=3&sort=' + sort + '&skip=' + skip)
       .map(response => response.json().rants);
   }
 

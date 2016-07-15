@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DevRantService} from '../dev-rant.service';
-
+import {Router, ActivatedRoute} from "@angular/router";
 @Component({
   moduleId: module.id,
   selector: 'app-json-feed',
@@ -9,13 +9,28 @@ import {DevRantService} from '../dev-rant.service';
 })
 export class JsonFeedComponent implements OnInit {
   private rants:any[] = [];
+  private sort:String = 'recent';
+  private validSorts = ['recent', 'top', 'algo'];
 
-  constructor(private devRant:DevRantService) {
+  constructor(private devRant:DevRantService, private route:ActivatedRoute) {
+
   }
 
   ngOnInit() {
-    this.devRant.getRants().subscribe(
-      rants => this.rants = rants
+    this.route
+      .params
+      .subscribe(params => {
+        let sort = params['sort'];
+        if (this.validSorts.indexOf(sort) >= 0) {
+          this.sort = sort;
+        }
+        this.getMoreRants();
+      });
+  }
+
+  getMoreRants() {
+    this.devRant.getRants(this.sort, this.rants.length).subscribe(
+      rants => rants.forEach(rant => this.rants.push(rant))
     );
   }
 
