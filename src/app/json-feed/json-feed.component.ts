@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {DevRantService} from '../dev-rant.service';
-import {Router, ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {DevRantService} from "../dev-rant.service";
+import {Router} from "@angular/router";
 @Component({
   moduleId: module.id,
   selector: 'app-json-feed',
@@ -12,14 +12,16 @@ export class JsonFeedComponent implements OnInit {
   private sort:String = 'recent';
   private validSorts = ['recent', 'top', 'algo'];
 
-  constructor(private devRant:DevRantService, private route:ActivatedRoute) {
+  constructor(private devRant:DevRantService, private route:Router) {
 
   }
 
   ngOnInit() {
     this.route
-      .params
+      .routerState
+      .queryParams
       .subscribe(params => {
+        console.log(params);
         let sort = params['sort'];
         if (this.validSorts.indexOf(sort) >= 0) {
           this.sort = sort;
