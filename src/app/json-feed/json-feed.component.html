@@ -100,7 +100,7 @@
     <span class="array-end">],</span>
     <div class="simple-field" *ngIf="rants.length > 0">
       <span class="comment">// Click here to load more rants</span>
-      <span class="field">loadMoreRants</span>: <a class="string" (click)="getMoreRants()">"CLICK HERE"</a>
+      <span class="field">loadMoreRants</span>: <a *ngIf="!loading" class="string" (click)="getMoreRants()">"CLICK HERE"</a><span *ngIf="loading" class="string">"LOADING..."</span>
     </div>
   </div>
   <span class="object-end">};</span>
