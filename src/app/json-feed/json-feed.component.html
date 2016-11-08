@@ -1,7 +1,7 @@
 <div class="js">
-  <span class="keyword">var</span> <span>results</span> = <span class="object-start">{</span>
+  <span class="keyword">var</span> <span>results</span> = <span class="object-start">{{ '{' }}</span>
   <div class="object-contents first">
-    <span class="field">nav</span>: <span class="object-start">{</span>
+    <span class="field">nav</span>: <span class="object-start">{{ '{' }}</span>
     <div class="object-contents">
       <div class="simple-field">
         <span class="comment">// Hexical Labs is the original creator of devRant</span>
@@ -15,7 +15,7 @@
       </div>
 
       <span class="comment">// Click any of these links to change the sorting mode</span>
-      <span class="field">sort</span>: <span class="object-start">{</span>
+      <span class="field">sort</span>: <span class="object-start">{{ '{' }}</span>
       <div class="object-contents">
         <div class="simple-field">
           <span class="field">algo</span>: <a href="/?sort=algo"
@@ -32,12 +32,12 @@
       </div>
       <span class="object-end">}</span>
     </div>
-    <span class="object-end">},</span>
+    <span class="object-end">{{ '}' }}.</span>
     <span class="field">rants</span>: <span class="array-start">[</span>
     <div class="array-contents">
       <pre class="string" *ngIf="rants.length == 0">"Loading..."</pre>
       <div *ngFor="let rant of rants; let i = index" [class.first]="i == 0">
-        <span class="object-start">{</span>
+        <span class="object-start">{{ '{' }}</span>
         <div class="object-contents">
           <div class="simple-field">
             <span class="comment">// Click the username to view more information</span>
@@ -75,7 +75,7 @@
                 load comments!"</a>
               <a class="string" *ngIf="rant.loadingComments">"Loading..."</a>
               <div *ngFor="let comment of rant.comments; let i = index">
-                <span class="object-start">{</span>
+                <span class="object-start">{{ '{' }}</span>
                 <div class="object-contents">
                   <div class="simple-field">
                     <span class="field">user</span>: <a href="https://www.devrant.io/users/{{comment.user_username}}"

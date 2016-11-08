@@ -1,10 +1,10 @@
-import { MigrationProjectPage } from './app.po';
+import { JsRantPage } from './app.po';
 
-describe('migration-project App', function() {
-  let page: MigrationProjectPage;
+describe('js-rant App', function() {
+  let page: JsRantPage;
 
   beforeEach(() => {
-    page = new MigrationProjectPage();
+    page = new JsRantPage();
   });
 
   it('should display message saying app works', () => {
